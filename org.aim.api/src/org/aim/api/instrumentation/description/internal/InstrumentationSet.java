@@ -68,7 +68,7 @@ public class InstrumentationSet {
 	 *         instrumented
 	 */
 	public Map<String, Set<Long>> methodsToInstrument(Class<?> clazz) {
-		Map<String, Set<Long>> result = new HashMap<>();
+		Map<String, Set<Long>> result = new HashMap<String, Set<Long>>();
 
 		for (FlatInstrumentationEntity fie : instrumentationEntities) {
 			if (fie.getClazz().equals(clazz)) {

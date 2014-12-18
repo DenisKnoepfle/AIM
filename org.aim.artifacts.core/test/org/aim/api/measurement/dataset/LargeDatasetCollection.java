@@ -41,8 +41,8 @@ public class LargeDatasetCollection {
 	protected static final int NUM_DATASETS = 3;
 	protected static final int NUM_INPUT_PARAMS = 2;
 	protected static final int NUM_OBS_PARAMS = 3;
-	protected static final List<Long> TIMESTAMPS = new ArrayList<>();
-	protected static final List<Long> RESPONSE_TIMES = new ArrayList<>();
+	protected static final List<Long> TIMESTAMPS = new ArrayList<Long>();
+	protected static final List<Long> RESPONSE_TIMES = new ArrayList<Long>();
 
 	protected static final Set<Parameter> additionalParameters = new TreeSet<Parameter>();
 	static {
@@ -50,7 +50,7 @@ public class LargeDatasetCollection {
 	}
 
 	public static DatasetCollection createDataset() {
-		List<AbstractRecord> records = new ArrayList<>();
+		List<AbstractRecord> records = new ArrayList<AbstractRecord>();
 		for (int i = 0; i < NUM_RECORDS_PER_CONFIG; i++) {
 			TIMESTAMPS.add(new Long(i));
 			RESPONSE_TIMES.add(new Long(i * 2));
@@ -92,7 +92,7 @@ public class LargeDatasetCollection {
 		DatasetCollectionBuilder dscBuilder = new DatasetCollectionBuilder();
 		numRecords = records.size();
 		for (AbstractRecord record : records) {
-			Set<Parameter> parameters = new TreeSet<>();
+			Set<Parameter> parameters = new TreeSet<Parameter>();
 			parameters.add(new Parameter(NUM_USERS_PARAM, NUMUSERS_1));
 			dscBuilder.addRecord(record, parameters);
 		}

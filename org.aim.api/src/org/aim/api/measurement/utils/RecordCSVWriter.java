@@ -195,7 +195,7 @@ public final class RecordCSVWriter {
 	}
 
 	private Integer getStructureHash(AbstractRecord record, Set<Parameter> parameters) {
-		Set<String> fixParameterNames = new TreeSet<>();
+		Set<String> fixParameterNames = new TreeSet<String>();
 		for (Parameter par : parameters) {
 			fixParameterNames.add(par.getName());
 		}

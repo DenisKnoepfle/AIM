@@ -15,7 +15,6 @@ import javax.swing.JList;
  * @author Marius Oehler
  *
  */
-@SuppressWarnings("rawtypes")
 public class ExtendedComboBox extends JComboBox {
 
 	private static final long serialVersionUID = 1L;
@@ -23,7 +22,6 @@ public class ExtendedComboBox extends JComboBox {
 	/**
 	 * Constructor.
 	 */
-	@SuppressWarnings("unchecked")
 	public ExtendedComboBox() {
 		setModel(new ExtendedComboBoxModel());
 		setRenderer(new ExtendedListCellRenderer());
@@ -35,7 +33,6 @@ public class ExtendedComboBox extends JComboBox {
 	 * @param text
 	 *            text of the delimiter
 	 */
-	@SuppressWarnings("unchecked")
 	public void addDelimiter(String text) {
 		this.addItem(new Delimiter(text));
 	}
@@ -46,7 +43,6 @@ public class ExtendedComboBox extends JComboBox {
 	 * @param item
 	 *            new item
 	 */
-	@SuppressWarnings("unchecked")
 	public void addItem(String item) {
 		super.addItem(item);
 	}

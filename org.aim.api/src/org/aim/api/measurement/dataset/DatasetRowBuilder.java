@@ -47,8 +47,8 @@ public class DatasetRowBuilder {
 	 */
 	public DatasetRowBuilder(Class<? extends AbstractRecord> recordType) {
 		this.recordType = recordType;
-		records = new ArrayList<>();
-		parameters = new TreeSet<>();
+		records = new ArrayList<AbstractRecord>();
+		parameters = new TreeSet<Parameter>();
 		updateStructureHash();
 	}
 
@@ -92,7 +92,7 @@ public class DatasetRowBuilder {
 	}
 
 	private void updateStructureHash() {
-		Set<String> names = new HashSet<>();
+		Set<String> names = new HashSet<String>();
 		for (Parameter p : parameters) {
 			names.add(p.getName());
 		}

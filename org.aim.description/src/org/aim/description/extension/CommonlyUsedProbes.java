@@ -13,12 +13,12 @@ import org.aim.description.scopes.SynchronizedScope;
  */
 public final class CommonlyUsedProbes {
 
-	public static final MeasurementProbe<MethodsEnclosingScope> RESPONSE_TIME_PROBE = new MeasurementProbe<>(
+	public static final MeasurementProbe<MethodsEnclosingScope> RESPONSE_TIME_PROBE = new MeasurementProbe<MethodsEnclosingScope>(
 			"ResponseTimeProbe");
-	public static final MeasurementProbe<MethodsEnclosingScope> TRACING_PROBE = new MeasurementProbe<>("TracingProbe");
-	public static final MeasurementProbe<MemoryScope> MEMORY_FOOTPRINT_PROBE = new MeasurementProbe<>(
+	public static final MeasurementProbe<MethodsEnclosingScope> TRACING_PROBE = new MeasurementProbe<MethodsEnclosingScope>("TracingProbe");
+	public static final MeasurementProbe<MemoryScope> MEMORY_FOOTPRINT_PROBE = new MeasurementProbe<MemoryScope>(
 			"MemoryFoortprintProbe");
-	public static final MeasurementProbe<SynchronizedScope> WAITING_TIME_PROBE = new MeasurementProbe<>(
+	public static final MeasurementProbe<SynchronizedScope> WAITING_TIME_PROBE = new MeasurementProbe<SynchronizedScope>(
 			"WaitingTimeProbe");
 
 	private CommonlyUsedProbes() {

@@ -38,7 +38,7 @@ public final class Utils {
 	private static final Map<String, Class<?>> primitiveTypes;
 
 	static {
-		primitiveTypes = new HashMap<>();
+		primitiveTypes = new HashMap<String, Class<?>>();
 		primitiveTypes.put("B", byte.class);
 		primitiveTypes.put("C", char.class);
 		primitiveTypes.put("D", double.class);

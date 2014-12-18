@@ -36,11 +36,21 @@ public class FileLogWriter implements IAIMLogWriter {
 
 	@Override
 	public synchronized void writeLogMessage(String message) {
-		try (BufferedWriter out = new BufferedWriter(new FileWriter(fileName, true))) {
+		BufferedWriter out = null;
+		try {
+			out = new BufferedWriter(new FileWriter(fileName, true));
 			out.append(message);
 			out.newLine();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} finally {
+			if (out != null) {
+				try {
+					out.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 
 	}

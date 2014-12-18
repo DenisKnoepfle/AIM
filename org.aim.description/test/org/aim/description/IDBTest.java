@@ -29,9 +29,9 @@ import org.junit.Test;
 
 public class IDBTest {
 
-	private static final MeasurementProbe<AllocationScope> MEMORY_FOOTPRINT_PROBE = new MeasurementProbe<>("MemoryFootprintProbe");
-	private static final MeasurementProbe<Scope> RESPONSE_TIME_PROBE = new MeasurementProbe<>("ResponseTimeProbe");
-	private static final MeasurementProbe<MethodsEnclosingScope> TRACING_PROBE = new MeasurementProbe<>("TracingProbe");
+	private static final MeasurementProbe<AllocationScope> MEMORY_FOOTPRINT_PROBE = new MeasurementProbe<AllocationScope>("MemoryFootprintProbe");
+	private static final MeasurementProbe<Scope> RESPONSE_TIME_PROBE = new MeasurementProbe<Scope>("ResponseTimeProbe");
+	private static final MeasurementProbe<MethodsEnclosingScope> TRACING_PROBE = new MeasurementProbe<MethodsEnclosingScope>("TracingProbe");
 	private static final String CPU_RESOURCE = "CPU";
 	private static final String DATABASE_API = "Database API";
 

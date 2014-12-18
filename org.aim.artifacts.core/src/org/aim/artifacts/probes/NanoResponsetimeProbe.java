@@ -31,7 +31,7 @@ import org.lpe.common.extension.IExtension;
  * 
  */
 public class NanoResponsetimeProbe extends AbstractEnclosingProbe {
-	public static final MeasurementProbe<MethodsEnclosingScope> MODEL_PROBE = new MeasurementProbe<>(
+	public static final MeasurementProbe<MethodsEnclosingScope> MODEL_PROBE = new MeasurementProbe<MethodsEnclosingScope>(
 			NanoResponsetimeProbe.class.getName());
 
 	/**

@@ -107,7 +107,7 @@ public abstract class AbstractInstAPIScope extends MethodsEnclosingScope impleme
 	 */
 	public Set<String> getMethodAnnotationsToMatch() {
 		if (methodAnnotationsToMatch == null) {
-			methodAnnotationsToMatch = new HashSet<>();
+			methodAnnotationsToMatch = new HashSet<String>();
 		}
 		return methodAnnotationsToMatch;
 	}

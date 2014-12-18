@@ -54,7 +54,7 @@ public class InstrumentationEntityDeserializer extends JsonDeserializer<Instrume
 		entity.setLocalRestriction(restriction);
 
 		MeasurementProbe[] probesAsArray = mapper.treeToValue(node.get("probesAsArray"), MeasurementProbe[].class);
-		Set<MeasurementProbe> probes = new HashSet<>();
+		Set<MeasurementProbe> probes = new HashSet<MeasurementProbe>();
 		for (MeasurementProbe mp : probesAsArray) {
 			probes.add(mp);
 		}

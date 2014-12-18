@@ -43,7 +43,7 @@ import org.aim.mainagent.scope.ScopeAnalysisController;
  */
 public class MethodInstrumentor implements IInstrumentor {
 	private static final AIMLogger LOGGER = AIMLoggerFactory.getLogger(MethodInstrumentor.class);
-	private final Set<FlatInstrumentationEntity> currentInstrumentationState = new HashSet<>();
+	private final Set<FlatInstrumentationEntity> currentInstrumentationState = new HashSet<FlatInstrumentationEntity>();
 
 	@SuppressWarnings("rawtypes")
 	@Override
@@ -59,7 +59,7 @@ public class MethodInstrumentor implements IInstrumentor {
 
 		// copy all classes to a new list as the array is not allowed to be
 		// modified!
-		List<Class> allLoadedClasses = new ArrayList<>();
+		List<Class> allLoadedClasses = new ArrayList<Class>();
 		allLoadedClasses.addAll(Arrays.asList(classes));
 
 		Set<FlatInstrumentationEntity> newInstrumentationStatements = scopeAnalyzer.resolveScopes(allLoadedClasses);

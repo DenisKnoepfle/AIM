@@ -201,7 +201,7 @@ public final class SnippetProvider {
 
 	private Set<String> getAllNonProbeMethods(Class<?> probeClass) {
 
-		Set<String> result = new HashSet<>();
+		Set<String> result = new HashSet<String>();
 
 		for (Method method : probeClass.getDeclaredMethods()) {
 			if (!method.isAnnotationPresent(ProbeBeforePart.class) && !method.isAnnotationPresent(ProbeAfterPart.class)) {
@@ -219,7 +219,7 @@ public final class SnippetProvider {
 	}
 
 	private Map<String, String> getImports(CompilationUnit cu) {
-		Map<String, String> imports = new HashMap<>();
+		Map<String, String> imports = new HashMap<String, String>();
 		for (ImportDeclaration imp : cu.getImports()) {
 			String value = imp.getName().toString();
 			int li = value.lastIndexOf(".");
@@ -248,7 +248,7 @@ public final class SnippetProvider {
 		if (member.getAnnotations() == null) {
 			return Collections.EMPTY_SET;
 		}
-		HashSet<String> result = new HashSet<>();
+		HashSet<String> result = new HashSet<String>();
 		for (AnnotationExpr annExpr : member.getAnnotations()) {
 			for (Node node : annExpr.getChildrenNodes()) {
 				if (node instanceof MemberValuePair) {

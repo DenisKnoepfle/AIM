@@ -57,7 +57,7 @@ public class MethodScopeAnalyzer extends AbstractScopeAnalyzer {
 			if (!LpeStringUtils.patternPrefixMatches(className, patternToInstrument)) {
 				continue;
 			}
-			Set<Method> methods = new HashSet<>();
+			Set<Method> methods = new HashSet<Method>();
 			for (Method m : clazz.getMethods()) {
 				if (!Modifier.isAbstract(m.getModifiers()) && !Modifier.isNative(m.getModifiers())) {
 					methods.add(m);

@@ -138,7 +138,11 @@ public class CEventAgentTest {
 				for (int i = 0; i < 100; i++) {
 					try {
 						jvmti.newMonitorWaitEvent(refThread, getClass(), i);
-					} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+					} catch (IllegalAccessException e) {
+						fail("Exception!\n" + e.getStackTrace());
+					} catch (IllegalArgumentException e) {
+						fail("Exception!\n" + e.getStackTrace());
+					} catch (InvocationTargetException e) {
 						fail("Exception!\n" + e.getStackTrace());
 					}
 				}
@@ -150,7 +154,11 @@ public class CEventAgentTest {
 				for (int i = 0; i < 150; i++) {
 					try {
 						jvmti.newMonitorEnteredEvent(refThread, getClass(), i);
-					} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+					} catch (IllegalAccessException e) {
+						fail("Exception!\n" + e.getStackTrace());
+					} catch (IllegalArgumentException e) {
+						fail("Exception!\n" + e.getStackTrace());
+					} catch (InvocationTargetException e) {
 						fail("Exception!\n" + e.getStackTrace());
 					}
 				}

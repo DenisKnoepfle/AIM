@@ -155,7 +155,7 @@ public class DatasetRow implements IDatasetElement, Iterable<String[]> {
 		if (!type.equals(getRecordType())) {
 			return new ArrayList<T>();
 		}
-		List<T> resultList = new ArrayList<>();
+		List<T> resultList = new ArrayList<T>();
 		for (AbstractRecord record : getRecords()) {
 			resultList.add((T) record);
 		}

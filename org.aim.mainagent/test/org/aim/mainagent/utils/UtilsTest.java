@@ -135,7 +135,7 @@ public class UtilsTest {
 				"methodB(java.lang.Integer)");
 		CtBehavior ctConstructor = Utils.getCtBehaviour(ctClass,
 				"DummyClass(java.lang.Integer)");
-		Map<String, Class<?>> variables = new HashMap<>();
+		Map<String, Class<?>> variables = new HashMap<String, Class<?>>();
 		variables.put("v1", int.class);
 		variables.put("v2", Integer.class);
 		variables.put("v3", ResponseTimeRecord.class);

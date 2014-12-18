@@ -37,8 +37,8 @@ public class DatasetCollectionBuilder {
 	 * Constructor.
 	 */
 	public DatasetCollectionBuilder() {
-		dsBuilder = new ArrayList<>();
-		datasets = new ArrayList<>();
+		dsBuilder = new ArrayList<DatasetBuilder>();
+		datasets = new ArrayList<Dataset>();
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class DatasetCollectionBuilder {
 			names.add(par.getName());
 		}
 
-		Set<String> parNames = new HashSet<>();
+		Set<String> parNames = new HashSet<String>();
 		parNames.addAll(names);
 
 		int recordStructureHash = parNames.hashCode() + record.getClass().hashCode();

@@ -40,8 +40,8 @@ import com.sun.jersey.api.client.WebResource;
 
 public class IDMJsonTest {
 
-	private static final MeasurementProbe<MethodsEnclosingScope> ME_PROBE = new MeasurementProbe<>("MEProbe");
-	private static final MeasurementProbe<Scope> ALL_PROBE = new MeasurementProbe<>("AllProbe");
+	private static final MeasurementProbe<MethodsEnclosingScope> ME_PROBE = new MeasurementProbe<MethodsEnclosingScope>("MEProbe");
+	private static final MeasurementProbe<Scope> ALL_PROBE = new MeasurementProbe<Scope>("AllProbe");
 
 	private static final String PORT = "8123";
 

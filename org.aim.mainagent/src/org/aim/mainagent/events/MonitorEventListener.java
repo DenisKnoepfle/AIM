@@ -63,7 +63,9 @@ public final class MonitorEventListener implements IEventListener<IMonitorEventP
 				probe.setEventTimeStamp(timestamp);
 				probe.setEventType(IMonitorEventProbe.TYPE_WAIT_ON_MONITOR);
 				probe.proceed();
-			} catch (InstantiationException | IllegalAccessException e) {
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
 				e.printStackTrace();
 			}
 		}
@@ -89,7 +91,9 @@ public final class MonitorEventListener implements IEventListener<IMonitorEventP
 				probe.setEventTimeStamp(timestamp);
 				probe.setEventType(IMonitorEventProbe.TYPE_ENTERED_MONITOR);
 				probe.proceed();
-			} catch (InstantiationException | IllegalAccessException e) {
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
 				e.printStackTrace();
 			}
 		}

@@ -25,7 +25,6 @@ import javax.swing.JTextField;
  * @author Marius Oehler
  *
  */
-@SuppressWarnings("unchecked")
 public class ItemListEntity extends JPanel implements ActionListener, KeyListener {
 
 	/**  */
@@ -79,14 +78,14 @@ public class ItemListEntity extends JPanel implements ActionListener, KeyListene
 			textField = new JTextField(value);
 			textField.addKeyListener(this);
 		} else {
-			textField = new JComboBox<String>();
-			((JComboBox<String>) textField).setEditable(true);
+			textField = new JComboBox();
+			((JComboBox) textField).setEditable(true);
 			for (String v : values) {
-				((JComboBox<String>) textField).addItem(v);
+				((JComboBox) textField).addItem(v);
 			}
-			for (int i = 0; i < ((JComboBox<String>) textField).getItemCount(); i++) {
-				if (((JComboBox<String>) textField).getItemAt(i).equals(value)) {
-					((JComboBox<String>) textField).setSelectedIndex(i);
+			for (int i = 0; i < ((JComboBox) textField).getItemCount(); i++) {
+				if (((JComboBox) textField).getItemAt(i).equals(value)) {
+					((JComboBox) textField).setSelectedIndex(i);
 				}
 			}
 		}
@@ -115,9 +114,9 @@ public class ItemListEntity extends JPanel implements ActionListener, KeyListene
 	 *            new values
 	 */
 	public void setValues(Collection<String> values) {
-		((JComboBox<String>) textField).removeAllItems();
+		((JComboBox) textField).removeAllItems();
 		for (String v : values) {
-			((JComboBox<String>) textField).addItem(v);
+			((JComboBox) textField).addItem(v);
 		}
 	}
 
@@ -137,7 +136,7 @@ public class ItemListEntity extends JPanel implements ActionListener, KeyListene
 		if (isTextbox) {
 			return ((JTextField) textField).getText();
 		} else {
-			return (String) ((JComboBox<String>) textField).getSelectedItem();
+			return (String) ((JComboBox) textField).getSelectedItem();
 		}
 	}
 
@@ -177,7 +176,7 @@ public class ItemListEntity extends JPanel implements ActionListener, KeyListene
 	 */
 	public void setEditable(boolean editable) {
 		if (textField instanceof JComboBox) {
-			((JComboBox<String>) textField).setEditable(editable);
+			((JComboBox) textField).setEditable(editable);
 		}
 	}
 

@@ -51,7 +51,7 @@ public abstract class ProbeTest {
 		CtClass ctClass = cPool.get(DummyClass.class.getName());
 		String methodSignature = INSTRUmENTED_METHOD;
 
-		Set<Class<? extends AbstractEnclosingProbe>> probeTypes = new HashSet<>();
+		Set<Class<? extends AbstractEnclosingProbe>> probeTypes = new HashSet<Class<? extends AbstractEnclosingProbe>>();
 		probeTypes.add(getProbeType());
 
 		InstrumentorAccessor.instrumentBehaviour(probeTypes, ctClass, methodSignature);

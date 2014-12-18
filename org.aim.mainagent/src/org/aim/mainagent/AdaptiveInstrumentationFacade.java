@@ -152,7 +152,7 @@ public final class AdaptiveInstrumentationFacade {
 		if (extensions == null) {
 			extensions = new SupportedExtensions();
 
-			Set<Class<?>> knownConcreteScopeClasses = new HashSet<>();
+			Set<Class<?>> knownConcreteScopeClasses = new HashSet<Class<?>>();
 			knownConcreteScopeClasses.add(AllocationScope.class);
 			knownConcreteScopeClasses.add(ConstructorScope.class);
 			knownConcreteScopeClasses.add(MemoryScope.class);
@@ -160,7 +160,7 @@ public final class AdaptiveInstrumentationFacade {
 			knownConcreteScopeClasses.add(SynchronizedScope.class);
 			knownConcreteScopeClasses.add(TraceScope.class);
 
-			Map<String, Set<Class<?>>> tempProbeScopeMapping = new HashMap<>();
+			Map<String, Set<Class<?>>> tempProbeScopeMapping = new HashMap<String, Set<Class<?>>>();
 
 			for (IExtension<?> extension : ExtensionRegistry.getSingleton().getExtensions()) {
 				if (extension instanceof AbstractCustomScopeExtension) {
@@ -184,7 +184,7 @@ public final class AdaptiveInstrumentationFacade {
 			}
 
 			for (String probeName : tempProbeScopeMapping.keySet()) {
-				Set<String> scopes = new HashSet<>();
+				Set<String> scopes = new HashSet<String>();
 				for (Class<?> concreteScope : knownConcreteScopeClasses) {
 					supportedScopeLoop: for (Class<?> supportedScope : tempProbeScopeMapping.get(probeName)) {
 						if (supportedScope.isAssignableFrom(concreteScope)) {

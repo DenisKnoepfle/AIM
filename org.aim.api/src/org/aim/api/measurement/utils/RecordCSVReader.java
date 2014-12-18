@@ -275,7 +275,7 @@ public final class RecordCSVReader {
 
 	private Set<Parameter> getAdditionalParameters(Class<? extends AbstractRecord> recordType, String[] header,
 			String[] types, String[] line, int numParameters) {
-		Set<Parameter> parameters = new TreeSet<>();
+		Set<Parameter> parameters = new TreeSet<Parameter>();
 		for (int i = numParameters; i < line.length; i++) {
 			parameters.add(new Parameter(header[i], LpeSupportedTypes.getValueOfType(line[i],
 					LpeSupportedTypes.get(types[i]))));

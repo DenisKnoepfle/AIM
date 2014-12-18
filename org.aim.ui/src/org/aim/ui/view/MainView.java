@@ -90,7 +90,7 @@ public final class MainView extends JFrame implements ConnectionStateListener, A
 	private JButton btnImportInstrumentationEntity;
 	private JButton btnInstrument;
 	private JButton btnMonitoring;
-	private JComboBox<String> inputHost;
+	private JComboBox inputHost;
 	private JTextField inputPort;
 	private RestrictionPanel panelGlobalRestrictions;
 
@@ -132,7 +132,7 @@ public final class MainView extends JFrame implements ConnectionStateListener, A
 		JLabel lblNewLabel = new JLabel("Host:");
 		panel.add(lblNewLabel);
 
-		inputHost = new JComboBox<String>();
+		inputHost = new JComboBox();
 		// CHECKSTYLE:OFF
 		inputHost.setPreferredSize(new Dimension(200, 20));
 		// CHECKSTYLE:ON
@@ -371,7 +371,7 @@ public final class MainView extends JFrame implements ConnectionStateListener, A
 	 * 
 	 * @return agent's host
 	 */
-	public JComboBox<String> getInputHost() {
+	public JComboBox getInputHost() {
 		return inputHost;
 	}
 
@@ -496,6 +496,14 @@ public final class MainView extends JFrame implements ConnectionStateListener, A
 			bciPanel.add(bci);
 		}
 
-		revalidate();
+		revalidateContent();
+	}
+
+	private void revalidateContent() {
+		synchronized (getTreeLock()) {
+			invalidate();
+			// There's no parents. Just validate itself.
+            validate();
+        }
 	}
 }

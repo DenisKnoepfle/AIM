@@ -38,7 +38,7 @@ public class SamplingExecuter implements Runnable {
 	 */
 	public SamplingExecuter(long delay) {
 		this.setDelay(delay);
-		sampler = new ArrayList<>();
+		sampler = new ArrayList<AbstractSampler>();
 	}
 
 	/**

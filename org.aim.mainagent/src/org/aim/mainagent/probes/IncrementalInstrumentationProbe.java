@@ -41,7 +41,7 @@ public class IncrementalInstrumentationProbe extends AbstractEnclosingProbe {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static final MeasurementProbe<MethodsEnclosingScope> MODEL_PROBE = new MeasurementProbe<>(
+	public static final MeasurementProbe<MethodsEnclosingScope> MODEL_PROBE = new MeasurementProbe<MethodsEnclosingScope>(
 			IncrementalInstrumentationProbe.class.getName());
 
 	public String __clazz = "__clazz";

@@ -44,7 +44,7 @@ public final class EventProbeRegistry {
 		return instance;
 	}
 
-	private final Map<Class<? extends IEventListener<?>>, List<Class<? extends IEventProbe>>> activatedProbes = new HashMap<>();
+	private final Map<Class<? extends IEventListener<?>>, List<Class<? extends IEventProbe>>> activatedProbes = new HashMap<Class<? extends IEventListener<?>>, List<Class<? extends IEventProbe>>>();
 
 	private EventProbeRegistry() {
 	}
@@ -63,7 +63,7 @@ public final class EventProbeRegistry {
 			Class<P> probeClass) {
 		List<Class<? extends IEventProbe>> probeList = activatedProbes.get(listenerClass);
 		if (probeList == null) {
-			probeList = new ArrayList<>();
+			probeList = new ArrayList<Class<? extends IEventProbe>>();
 			activatedProbes.put(listenerClass, probeList);
 		}
 
@@ -89,7 +89,7 @@ public final class EventProbeRegistry {
 			return null;
 		}
 
-		List<Class<? extends P>> castedProbeClassList = new ArrayList<>();
+		List<Class<? extends P>> castedProbeClassList = new ArrayList<Class<? extends P>>();
 
 		for (Class<? extends IEventProbe> pc : probeClassList) {
 			castedProbeClassList.add((Class<? extends P>) pc);

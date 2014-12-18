@@ -219,10 +219,20 @@ public final class InstrumentationAgent {
 			return;
 		}
 		Properties agentProperties = new Properties();
-		try (FileReader reader = new FileReader(agentConfigFile)) {
+		FileReader reader = null;
+		try {
+			reader = new FileReader(agentConfigFile);
 			agentProperties.load(reader);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
+		} finally {
+			if (reader != null) {
+				try {
+					reader.close();
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+				}
+			}
 		}
 
 		for (Object key : agentProperties.keySet()) {

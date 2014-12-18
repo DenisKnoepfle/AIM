@@ -26,7 +26,7 @@ import java.util.Map;
  */
 public class Snippet {
 
-	private final Map<String, Class<?>> variables = new HashMap<>();
+	private final Map<String, Class<?>> variables = new HashMap<String, Class<?>>();
 	private String beforePart;
 	private String afterPart;
 	private String incrementalPart;

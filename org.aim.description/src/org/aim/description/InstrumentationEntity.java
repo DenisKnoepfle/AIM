@@ -57,7 +57,7 @@ public class InstrumentationEntity<S extends Scope> {
 	 */
 	public InstrumentationEntity(S scope) {
 		this.scope = scope;
-		this.probes = new HashSet<>();
+		this.probes = new HashSet<MeasurementProbe<? super S>>();
 	}
 
 	/**
@@ -91,7 +91,7 @@ public class InstrumentationEntity<S extends Scope> {
 	 */
 	@JsonIgnore
 	public Set<String> getProbesAsStrings() {
-		Set<String> stringSet = new HashSet<>();
+		Set<String> stringSet = new HashSet<String>();
 		for (MeasurementProbe<?> mProbe : probes) {
 			stringSet.add(mProbe.getName());
 

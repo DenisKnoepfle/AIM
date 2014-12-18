@@ -65,7 +65,7 @@ public class ClassScopeAnalyzer extends AbstractScopeAnalyzer {
 			return;
 		}
 
-		Set<Method> methods = new HashSet<>();
+		Set<Method> methods = new HashSet<Method>();
 		if (!restriction.hasModifierRestrictions() || !restriction.modifierSetExcluded(Modifier.PUBLIC)) {
 			for (Method m : clazz.getMethods()) {
 				if (!restriction.isExcluded(m.getDeclaringClass().getName())) {

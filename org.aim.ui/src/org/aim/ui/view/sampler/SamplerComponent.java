@@ -31,7 +31,7 @@ public class SamplerComponent extends JPanel implements ActionListener {
 	private static final int INSET_VALUE = 5;
 	private JButton btnRemove;
 	private JTextField inputDelay;
-	private JComboBox<String> inputSampler;
+	private JComboBox inputSampler;
 	private SamplerPanel parentPanel;
 
 	/**
@@ -66,7 +66,7 @@ public class SamplerComponent extends JPanel implements ActionListener {
 		gbcLblDelay.gridy = 0;
 		add(lblDelay, gbcLblDelay);
 
-		inputSampler = new JComboBox<String>();
+		inputSampler = new JComboBox();
 		inputSampler.setEditable(true);
 		GridBagConstraints gbcInputSampler = new GridBagConstraints();
 		gbcInputSampler.weightx = 1.0;

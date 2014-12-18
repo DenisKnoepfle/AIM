@@ -42,7 +42,7 @@ public class ProbeBuilder {
 	 */
 	public ProbeBuilder(String methodSignature) {
 		this.methodSignature = methodSignature;
-		injectedProbeTypes = new HashSet<>();
+		injectedProbeTypes = new HashSet<Class<? extends AbstractEnclosingProbe>>();
 	}
 
 	/**

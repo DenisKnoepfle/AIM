@@ -93,7 +93,7 @@ public class DatasetRowTest {
 		Assert.assertArrayEquals(header, row.getHeader());
 		Assert.assertArrayEquals(types, row.getTypes());
 
-		Set<Parameter> parameters = new TreeSet<>();
+		Set<Parameter> parameters = new TreeSet<Parameter>();
 		parameters.add(new Parameter(testParameterName, testParameterValue));
 		Assert.assertArrayEquals(values, DatasetRow.getValueArray(row.getRecords().get(1), parameters));
 

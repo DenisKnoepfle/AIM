@@ -28,7 +28,7 @@ public class MonitorWaitingTimeProbeExtension extends AbstractEventProbeExtensio
 
 	@Override
 	public Set<Class<?>> getScopeDependencies() {
-		Set<Class<?>> supportedScopes = new HashSet<>();
+		Set<Class<?>> supportedScopes = new HashSet<Class<?>>();
 		supportedScopes.add(SynchronizedScope.class);
 		return supportedScopes;
 	}

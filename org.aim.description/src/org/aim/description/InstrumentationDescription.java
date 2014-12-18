@@ -49,8 +49,8 @@ public class InstrumentationDescription {
 	 */
 	@JsonCreator
 	public InstrumentationDescription() {
-		this.instrumentationEntities = new HashSet<>();
-		this.samplingDescriptions = new HashSet<>();
+		this.instrumentationEntities = new HashSet<InstrumentationEntity<?>>();
+		this.samplingDescriptions = new HashSet<SamplingDescription>();
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class InstrumentationDescription {
 	@SuppressWarnings("unchecked")
 	@JsonIgnore
 	public <S extends Scope> Set<InstrumentationEntity<S>> getInstrumentationEntities(Class<S> type) {
-		Set<InstrumentationEntity<S>> sEntities = new HashSet<>();
+		Set<InstrumentationEntity<S>> sEntities = new HashSet<InstrumentationEntity<S>>();
 
 		for (InstrumentationEntity<?> ie : instrumentationEntities) {
 			if (type.isAssignableFrom(ie.getScope().getClass())) {

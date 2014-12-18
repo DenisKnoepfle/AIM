@@ -119,7 +119,7 @@ public class DatasetCollection {
 	 * @return all record found in this collection
 	 */
 	public List<AbstractRecord> getRecords() {
-		List<AbstractRecord> records = new ArrayList<>();
+		List<AbstractRecord> records = new ArrayList<AbstractRecord>();
 		for (Dataset dataset : dataSets) {
 			records.addAll(dataset.getRecords());
 		}
@@ -131,7 +131,7 @@ public class DatasetCollection {
 	 * @return all rows found in all the datasets of this collection
 	 */
 	public List<DatasetRow> getRows() {
-		List<DatasetRow> rows = new ArrayList<>();
+		List<DatasetRow> rows = new ArrayList<DatasetRow>();
 		for (Dataset dataset : dataSets) {
 			rows.addAll(dataset.getRows());
 		}

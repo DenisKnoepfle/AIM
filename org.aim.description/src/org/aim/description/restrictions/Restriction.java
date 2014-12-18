@@ -46,10 +46,10 @@ public class Restriction {
 	 */
 	@JsonCreator
 	public Restriction() {
-		this.packageIncludes = new HashSet<>();
-		this.packageExcludes = new HashSet<>();
-		this.modifierExcludes = new HashSet<>();
-		this.modifierIncludes = new HashSet<>();
+		this.packageIncludes = new HashSet<String>();
+		this.packageExcludes = new HashSet<String>();
+		this.modifierExcludes = new HashSet<Integer>();
+		this.modifierIncludes = new HashSet<Integer>();
 	}
 
 	/**

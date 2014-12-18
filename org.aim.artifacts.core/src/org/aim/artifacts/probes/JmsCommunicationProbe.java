@@ -35,7 +35,7 @@ import org.lpe.common.extension.IExtension;
  * 
  */
 public class JmsCommunicationProbe extends AbstractEnclosingProbe {
-	public static final MeasurementProbe<MethodsEnclosingScope> MODEL_PROBE = new MeasurementProbe<>(
+	public static final MeasurementProbe<MethodsEnclosingScope> MODEL_PROBE = new MeasurementProbe<MethodsEnclosingScope>(
 			JmsCommunicationProbe.class.getName());
 	public static final String MSG_CORRELATION_VARIABLE = "org_ppd_measurement_trace_msg_correlation";
 

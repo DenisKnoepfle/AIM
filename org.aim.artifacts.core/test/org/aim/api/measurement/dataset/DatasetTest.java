@@ -41,12 +41,12 @@ public class DatasetTest {
 	private static final int numConfigurations = 6;
 	private static final int numInputParams = 3;
 	private static final int numObservationParams = 3;
-	private List<Long> timestamps = new ArrayList<>();
-	private List<Long> responseTimes = new ArrayList<>();
+	private List<Long> timestamps = new ArrayList<Long>();
+	private List<Long> responseTimes = new ArrayList<Long>();
 
 	@Before
 	public void createDataset() {
-		List<AbstractRecord> records = new ArrayList<>();
+		List<AbstractRecord> records = new ArrayList<AbstractRecord>();
 		for (int i = 0; i < numRecords / numConfigurations; i++) {
 			timestamps.add(new Long(i));
 			responseTimes.add(new Long(i * 2));
@@ -57,15 +57,15 @@ public class DatasetTest {
 		dsBuilder = new DatasetBuilder(ResponseTimeRecord.class);
 
 		for (AbstractRecord record : records) {
-			Set<Parameter> parameters = new TreeSet<>();
+			Set<Parameter> parameters = new TreeSet<Parameter>();
 			parameters.add(new Parameter(NUM_USERS_PARAM, numUsers_1));
 			dsBuilder.addRecord(record, parameters);
 
-			parameters = new HashSet<>();
+			parameters = new HashSet<Parameter>();
 			parameters.add(new Parameter(NUM_USERS_PARAM, numUsers_2));
 			dsBuilder.addRecord(record, parameters);
 
-			parameters = new HashSet<>();
+			parameters = new HashSet<Parameter>();
 			parameters.add(new Parameter(NUM_USERS_PARAM, numUsers_3));
 			dsBuilder.addRecord(record, parameters);
 		}

@@ -42,7 +42,7 @@ public class SQLQueryProbeExtension extends AbstractEnclosingProbeExtension {
 
 	@Override
 	public Set<Class<?>> getScopeDependencies() {
-		Set<Class<?>> supportedScopes = new HashSet<>();
+		Set<Class<?>> supportedScopes = new HashSet<Class<?>>();
 		supportedScopes.add(JDBCScope.class);
 		return supportedScopes;
 	}

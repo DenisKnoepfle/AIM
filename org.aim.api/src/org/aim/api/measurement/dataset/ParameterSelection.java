@@ -47,10 +47,10 @@ public class ParameterSelection {
 	 * Constructor.
 	 */
 	public ParameterSelection() {
-		selection = new TreeSet<>();
-		unEqualSelection = new TreeSet<>();
-		largerSelection = new TreeSet<>();
-		smallerSelection = new TreeSet<>();
+		selection = new TreeSet<Parameter>();
+		unEqualSelection = new TreeSet<Parameter>();
+		largerSelection = new TreeSet<Parameter>();
+		smallerSelection = new TreeSet<Parameter>();
 	}
 
 	/**
@@ -299,29 +299,29 @@ public class ParameterSelection {
 		Set<Parameter> largerObservationParameters = null;
 
 		if (!selection.isEmpty()) {
-			selectionInputParameters = new HashSet<>();
-			selectionObservationParameters = new HashSet<>();
+			selectionInputParameters = new HashSet<Parameter>();
+			selectionObservationParameters = new HashSet<Parameter>();
 			splitParametersIntoInputAndOutput(dataset, selectionInputParameters, selectionObservationParameters,
 					selection);
 		}
 
 		if (!unEqualSelection.isEmpty()) {
-			unEqualInputParameters = new HashSet<>();
-			unEqualnObservationParameters = new HashSet<>();
+			unEqualInputParameters = new HashSet<Parameter>();
+			unEqualnObservationParameters = new HashSet<Parameter>();
 			splitParametersIntoInputAndOutput(dataset, unEqualInputParameters, unEqualnObservationParameters,
 					unEqualSelection);
 		}
 
 		if (!smallerSelection.isEmpty()) {
-			smallerInputParameters = new HashSet<>();
-			smallerObservationParameters = new HashSet<>();
+			smallerInputParameters = new HashSet<Parameter>();
+			smallerObservationParameters = new HashSet<Parameter>();
 			splitParametersIntoInputAndOutput(dataset, smallerInputParameters, smallerObservationParameters,
 					smallerSelection);
 		}
 
 		if (!largerSelection.isEmpty()) {
-			largerInputParameters = new HashSet<>();
-			largerObservationParameters = new HashSet<>();
+			largerInputParameters = new HashSet<Parameter>();
+			largerObservationParameters = new HashSet<Parameter>();
 			splitParametersIntoInputAndOutput(dataset, largerInputParameters, largerObservationParameters,
 					largerSelection);
 		}

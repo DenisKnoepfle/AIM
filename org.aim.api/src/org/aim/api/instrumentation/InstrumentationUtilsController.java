@@ -41,7 +41,7 @@ public final class InstrumentationUtilsController {
 	private List<IInstrumentationUtil> utils;
 
 	private InstrumentationUtilsController() {
-		utils = new ArrayList<>();
+		utils = new ArrayList<IInstrumentationUtil>();
 	}
 
 	/**

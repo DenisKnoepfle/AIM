@@ -86,7 +86,7 @@ public final class JInstrumentation {
 
 		// TODO: maybe a cache is useful / reasonable to reduce instrumentation
 		// time???
-		List<Class<?>> classes = new ArrayList<>();
+		List<Class<?>> classes = new ArrayList<Class<?>>();
 		for (Class<?> clazz : jInstrumentation.getAllLoadedClasses()) {
 			if (clazz.getName().equals(className)) {
 				classes.add(clazz);

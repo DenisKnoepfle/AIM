@@ -28,7 +28,7 @@ public class SamplerPanel extends JPanel implements ActionListener {
 
 	private JPanel panel;
 	private JPanel panelSamplerWrapper;
-	private List<SamplerComponent> samplerList = new ArrayList<>();
+	private List<SamplerComponent> samplerList = new ArrayList<SamplerComponent>();
 	private JScrollPane scrollPane;
 
 	/**

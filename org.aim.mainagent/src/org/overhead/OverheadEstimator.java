@@ -55,7 +55,7 @@ public final class OverheadEstimator {
 		idBuilder.newMethodScopeEntity(OverheadTargetClass.class.getName() + ".called()").addProbe(probeTypeName)
 				.entityDone();
 
-		List<OverheadRecord> records = new ArrayList<>();
+		List<OverheadRecord> records = new ArrayList<OverheadRecord>();
 
 		for (int i = 0; i < REPETITIONS; i++) {
 			records.add(runExperiment(idBuilder.build()));
@@ -74,7 +74,7 @@ public final class OverheadEstimator {
 	 *             if instrumentation fails
 	 */
 	public static OverheadRecord runExperiment(InstrumentationDescription instDescr) throws InstrumentationException {
-		List<OverheadRecord> records = new ArrayList<>();
+		List<OverheadRecord> records = new ArrayList<OverheadRecord>();
 		AdaptiveInstrumentationFacade.getInstance().instrument(instDescr);
 
 		OverheadTargetClass target = new OverheadTargetClass();

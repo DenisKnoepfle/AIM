@@ -39,8 +39,8 @@ public class DatasetBuilder {
 	 *            type of the underlying records
 	 */
 	public DatasetBuilder(Class<? extends AbstractRecord> recordType) {
-		rowBuilder = new ArrayList<>();
-		rows = new ArrayList<>();
+		rowBuilder = new ArrayList<DatasetRowBuilder>();
+		rows = new ArrayList<DatasetRow>();
 	}
 
 	/**

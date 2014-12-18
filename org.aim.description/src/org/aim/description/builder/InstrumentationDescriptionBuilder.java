@@ -100,7 +100,7 @@ public class InstrumentationDescriptionBuilder extends AbstractRestrictableBuild
 	 * @return an {@link InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<MethodScope> newMethodScopeEntity(String... patterns) {
-		return new InstrumentationEntityBuilder<>(new MethodScope(patterns), this);
+		return new InstrumentationEntityBuilder<MethodScope>(new MethodScope(patterns), this);
 	}
 
 	/**
@@ -121,7 +121,7 @@ public class InstrumentationDescriptionBuilder extends AbstractRestrictableBuild
 	 * @return an {@link InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<MemoryScope> newMemoryScopeEntity() {
-		return new InstrumentationEntityBuilder<>(new MemoryScope(), this);
+		return new InstrumentationEntityBuilder<MemoryScope>(new MemoryScope(), this);
 	}
 
 	/**
@@ -133,7 +133,7 @@ public class InstrumentationDescriptionBuilder extends AbstractRestrictableBuild
 	 * @return an {@link InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<AllocationScope> newAllocationScopeEntity(String... classes) {
-		return new InstrumentationEntityBuilder<>(new AllocationScope(classes), this);
+		return new InstrumentationEntityBuilder<AllocationScope>(new AllocationScope(classes), this);
 	}
 
 	/**
@@ -145,7 +145,7 @@ public class InstrumentationDescriptionBuilder extends AbstractRestrictableBuild
 	 * @return an {@link InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<ConstructorScope> newConstructorScopeEntity(String... classes) {
-		return new InstrumentationEntityBuilder<>(new ConstructorScope(classes), this);
+		return new InstrumentationEntityBuilder<ConstructorScope>(new ConstructorScope(classes), this);
 	}
 
 	/**
@@ -155,7 +155,7 @@ public class InstrumentationDescriptionBuilder extends AbstractRestrictableBuild
 	 * @return an {@link InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<SynchronizedScope> newSynchronizedScopeEntity() {
-		return new InstrumentationEntityBuilder<>(new SynchronizedScope(), this);
+		return new InstrumentationEntityBuilder<SynchronizedScope>(new SynchronizedScope(), this);
 	}
 
 	/**
@@ -167,7 +167,7 @@ public class InstrumentationDescriptionBuilder extends AbstractRestrictableBuild
 	 * @return an {@link InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<APIScope> newAPIScopeEntity(String apiName) {
-		return new InstrumentationEntityBuilder<>(new APIScope(apiName), this);
+		return new InstrumentationEntityBuilder<APIScope>(new APIScope(apiName), this);
 	}
 
 	/**
@@ -179,7 +179,7 @@ public class InstrumentationDescriptionBuilder extends AbstractRestrictableBuild
 	 * @return an {@link InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<CustomScope> newCustomScopeEntity(String scopeName) {
-		return new InstrumentationEntityBuilder<>(new CustomScope(scopeName), this);
+		return new InstrumentationEntityBuilder<CustomScope>(new CustomScope(scopeName), this);
 	}
 
 	/**
@@ -193,7 +193,7 @@ public class InstrumentationDescriptionBuilder extends AbstractRestrictableBuild
 	 * @return an {@link InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<MethodScope> newMethodScopeEntityWithId(long id, String... patterns) {
-		return new InstrumentationEntityBuilder<>(new MethodScope(patterns, id), this);
+		return new InstrumentationEntityBuilder<MethodScope>(new MethodScope(patterns, id), this);
 	}
 
 	/**
@@ -218,7 +218,7 @@ public class InstrumentationDescriptionBuilder extends AbstractRestrictableBuild
 	 * @return an {@link InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<MemoryScope> newMemoryScopeEntityWithId(long id) {
-		return new InstrumentationEntityBuilder<>(new MemoryScope(id), this);
+		return new InstrumentationEntityBuilder<MemoryScope>(new MemoryScope(id), this);
 	}
 
 	/**
@@ -232,7 +232,7 @@ public class InstrumentationDescriptionBuilder extends AbstractRestrictableBuild
 	 * @return an {@link InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<AllocationScope> newAllocationScopeEntityWithId(long id, String... classes) {
-		return new InstrumentationEntityBuilder<>(new AllocationScope(classes, id), this);
+		return new InstrumentationEntityBuilder<AllocationScope>(new AllocationScope(classes, id), this);
 	}
 
 	/**
@@ -246,7 +246,7 @@ public class InstrumentationDescriptionBuilder extends AbstractRestrictableBuild
 	 * @return an {@link InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<ConstructorScope> newConstructorScopeEntityWithId(long id, String... classes) {
-		return new InstrumentationEntityBuilder<>(new ConstructorScope(classes, id), this);
+		return new InstrumentationEntityBuilder<ConstructorScope>(new ConstructorScope(classes, id), this);
 	}
 
 	/**
@@ -258,7 +258,7 @@ public class InstrumentationDescriptionBuilder extends AbstractRestrictableBuild
 	 * @return an {@link InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<SynchronizedScope> newSynchronizedScopeEntityWithId(long id) {
-		return new InstrumentationEntityBuilder<>(new SynchronizedScope(id), this);
+		return new InstrumentationEntityBuilder<SynchronizedScope>(new SynchronizedScope(id), this);
 	}
 
 	/**
@@ -272,7 +272,7 @@ public class InstrumentationDescriptionBuilder extends AbstractRestrictableBuild
 	 * @return an {@link InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<APIScope> newAPIScopeEntityWithId(long id, String apiName) {
-		return new InstrumentationEntityBuilder<>(new APIScope(apiName, id), this);
+		return new InstrumentationEntityBuilder<APIScope>(new APIScope(apiName, id), this);
 	}
 
 	/**
@@ -286,7 +286,7 @@ public class InstrumentationDescriptionBuilder extends AbstractRestrictableBuild
 	 * @return an {@link InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<CustomScope> newCustomScopeEntityWithId(long id, String scopeName) {
-		return new InstrumentationEntityBuilder<>(new CustomScope(scopeName, id), this);
+		return new InstrumentationEntityBuilder<CustomScope>(new CustomScope(scopeName, id), this);
 	}
 
 	/**

@@ -66,7 +66,7 @@ public final class BCInjector {
 
 	private BCInjector() {
 
-		originalByteCodes = new HashMap<>();
+		originalByteCodes = new HashMap<Class<?>, byte[]>();
 	}
 
 	/**
@@ -146,7 +146,7 @@ public final class BCInjector {
 	 * @return mapping from classes to original bytecodes
 	 */
 	public synchronized Map<Class<?>, byte[]> revertInstrumentation() {
-		List<Class<?>> classes = new ArrayList<>();
+		List<Class<?>> classes = new ArrayList<Class<?>>();
 		classes.addAll(originalByteCodes.keySet());
 		return partlyRevertInstrumentation(classes);
 	}

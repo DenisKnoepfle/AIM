@@ -79,12 +79,12 @@ public class ScopeAnalysisController {
 		List<Class> filteredClasses = removeGlobalyExcludedClasses(allLoadedClasses);
 
 		Map<IScopeAnalyzer, Set<String>> scopeAnalyzersToProbesMap = createScopeAnalyzerToProbesMapping(allLoadedClasses);
-		Set<FlatInstrumentationEntity> instrumentationEntities = new HashSet<>();
-		Map<String, Class<? extends AbstractEnclosingProbe>> probeClasses = new HashMap<>();
+		Set<FlatInstrumentationEntity> instrumentationEntities = new HashSet<FlatInstrumentationEntity>();
+		Map<String, Class<? extends AbstractEnclosingProbe>> probeClasses = new HashMap<String, Class<? extends AbstractEnclosingProbe>>();
 		for (Entry<IScopeAnalyzer, Set<String>> mapEntry : scopeAnalyzersToProbesMap.entrySet()) {
 			IScopeAnalyzer sAnalyzer = mapEntry.getKey();
 			Set<String> probes = mapEntry.getValue();
-			Set<FlatScopeEntity> scopeEntities = new HashSet<>();
+			Set<FlatScopeEntity> scopeEntities = new HashSet<FlatScopeEntity>();
 			for (Class<?> clazz : filteredClasses) {
 				try {
 					sAnalyzer.visitClass(clazz, scopeEntities);
@@ -124,7 +124,7 @@ public class ScopeAnalysisController {
 
 	@SuppressWarnings("rawtypes")
 	private List<Class> removeGlobalyExcludedClasses(List<Class> allLoadedClasses) {
-		List<Class> toKeep = new ArrayList<>();
+		List<Class> toKeep = new ArrayList<Class>();
 
 		for (Class clazz : allLoadedClasses) {
 			boolean invalidClass = false;
@@ -160,7 +160,7 @@ public class ScopeAnalysisController {
 	@SuppressWarnings("rawtypes")
 	private Map<IScopeAnalyzer, Set<String>> createScopeAnalyzerToProbesMapping(List<Class> allLoadedClasses)
 			throws InstrumentationException {
-		Map<IScopeAnalyzer, Set<String>> mapping = new HashMap<>();
+		Map<IScopeAnalyzer, Set<String>> mapping = new HashMap<IScopeAnalyzer, Set<String>>();
 		for (InstrumentationEntity<MethodsEnclosingScope> mScopeEntity : instrumentationDescription
 				.getInstrumentationEntities(MethodsEnclosingScope.class)) {
 			IScopeAnalyzer scopeAnalyzer = null;

@@ -31,9 +31,9 @@ public class MultiSnippet {
 	/**
 	 * Mappings from pre-conditional method name, to snippet artifacts
 	 */
-	private final Map<String, Class<?>> variables = new HashMap<>();
-	private final Map<Set<String>, String> beforePart = new HashMap<>();
-	private final Map<Set<String>, String> afterPart = new HashMap<>();
+	private final Map<String, Class<?>> variables = new HashMap<String, Class<?>>();
+	private final Map<Set<String>, String> beforePart = new HashMap<Set<String>, String>();
+	private final Map<Set<String>, String> afterPart = new HashMap<Set<String>, String>();
 	private String incrementalPart;
 
 	/**

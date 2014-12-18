@@ -139,7 +139,7 @@ public final class MeasurementDataUtils {
 		if (parameters instanceof Set) {
 			parameterSet = (Set<Parameter>) parameters;
 		} else {
-			parameterSet = new TreeSet<>();
+			parameterSet = new TreeSet<Parameter>();
 			parameterSet.addAll(parameters);
 		}
 		DatasetCollectionBuilder dscBuilder = new DatasetCollectionBuilder();

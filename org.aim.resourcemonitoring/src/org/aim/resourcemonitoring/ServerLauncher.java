@@ -68,7 +68,7 @@ public final class ServerLauncher {
 		if (args[0].equalsIgnoreCase("start")) {
 			LpeSystemUtils.loadNativeLibraries();
 
-			List<String> servicePackages = new ArrayList<>();
+			List<String> servicePackages = new ArrayList<String>();
 			servicePackages.add(MonitoringService.class.getPackage().getName());
 			initDataCollector();
 			WebServer.getInstance().start(Integer.parseInt(port), PREFIX, servicePackages);

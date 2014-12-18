@@ -42,7 +42,7 @@ public class MemoryFootprintProbeExtension extends AbstractEnclosingProbeExtensi
 
 	@Override
 	public Set<Class<?>> getScopeDependencies() {
-		Set<Class<?>> supportedScopes = new HashSet<>();
+		Set<Class<?>> supportedScopes = new HashSet<Class<?>>();
 		supportedScopes.add(MethodsEnclosingScope.class);
 		return supportedScopes;
 	}

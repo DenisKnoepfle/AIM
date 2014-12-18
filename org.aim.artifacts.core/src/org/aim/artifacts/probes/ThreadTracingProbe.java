@@ -32,7 +32,7 @@ import org.lpe.common.extension.IExtension;
  */
 public class ThreadTracingProbe extends AbstractEnclosingProbe {
 
-	public static final MeasurementProbe<MethodsEnclosingScope> MODEL_PROBE = new MeasurementProbe<>(
+	public static final MeasurementProbe<MethodsEnclosingScope> MODEL_PROBE = new MeasurementProbe<MethodsEnclosingScope>(
 			ThreadTracingProbe.class.getName());
 
 	/**

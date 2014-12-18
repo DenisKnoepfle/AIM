@@ -41,7 +41,7 @@ public class JmsMessageSizeProbeExtension extends AbstractEnclosingProbeExtensio
 
 	@Override
 	public Set<Class<?>> getScopeDependencies() {
-		Set<Class<?>> supportedScopes = new HashSet<>();
+		Set<Class<?>> supportedScopes = new HashSet<Class<?>>();
 		supportedScopes.add(JmsScope.class);
 		return supportedScopes;
 	}

@@ -35,7 +35,7 @@ import org.lpe.common.extension.IExtension;
  * 
  */
 public class JmsMessageSizeProbe extends AbstractEnclosingProbe {
-	public static final MeasurementProbe<APIScope> MODEL_PROBE = new MeasurementProbe<>(
+	public static final MeasurementProbe<APIScope> MODEL_PROBE = new MeasurementProbe<APIScope>(
 			JmsMessageSizeProbe.class.getName());
 
 	/**

@@ -60,11 +60,11 @@ public class APIScopeAnalyzer extends AbstractScopeAnalyzer {
 	@SuppressWarnings("rawtypes")
 	public APIScopeAnalyzer(AbstractInstAPIScope apiScope, List<Class> allLoadedClasses)
 			throws InstrumentationException {
-		methodsToMatch = new HashMap<>();
+		methodsToMatch = new HashMap<Class<?>, List<MethodSignature>>();
 		for (String containerName : apiScope.getMethodsToMatch().keySet()) {
 			try {
 				Class<?> containerClass = Class.forName(containerName);
-				List<MethodSignature> signatures = new ArrayList<>();
+				List<MethodSignature> signatures = new ArrayList<MethodSignature>();
 				for (String apiMethod : apiScope.getMethodsToMatch().get(containerName)) {
 					String methodName = apiMethod.substring(0, apiMethod.indexOf('('));
 					Class<?>[] paramTypes = Utils.getParameterTypes(apiMethod);
@@ -76,7 +76,7 @@ public class APIScopeAnalyzer extends AbstractScopeAnalyzer {
 			}
 		}
 
-		methodAnnotationsToMatch = new HashSet<>();
+		methodAnnotationsToMatch = new HashSet<Class<Annotation>>();
 		for (String annotationName : apiScope.getMethodAnnotationsToMatch()) {
 			try {
 				Class<Annotation> annotationClass = findAnnotation(allLoadedClasses, annotationName);
@@ -118,10 +118,10 @@ public class APIScopeAnalyzer extends AbstractScopeAnalyzer {
 			return;
 		}
 		if (scopeEntities == null) {
-			scopeEntities = new HashSet<>();
+			scopeEntities = new HashSet<FlatScopeEntity>();
 		}
 
-		Set<Method> methods = new HashSet<>();
+		Set<Method> methods = new HashSet<Method>();
 		for (Method m : clazz.getMethods()) {
 			if (!Modifier.isAbstract(m.getModifiers()) && !Modifier.isNative(m.getModifiers())
 					&& m.getDeclaringClass().equals(clazz)) {

@@ -64,9 +64,9 @@ public final class TraceInstrumentor implements IInstrumentor {
 	private volatile long idCounter = 0;
 
 	private TraceInstrumentor() {
-		incrementalInstrumentationProbes = new HashMap<>();
-		incrementalInstrumentationRestrictions = new HashMap<>();
-		instrumentationFlags = new HashSet<>();
+		incrementalInstrumentationProbes = new HashMap<Long, Set<String>>();
+		incrementalInstrumentationRestrictions = new HashMap<Long, Restriction>();
+		instrumentationFlags = new HashSet<String>();
 	}
 
 	/**

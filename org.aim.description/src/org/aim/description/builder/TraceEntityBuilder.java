@@ -65,7 +65,7 @@ public class TraceEntityBuilder {
 	 * @return an {@code InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<TraceScope> setMethodSubScope(String... patterns) {
-		return new InstrumentationEntityBuilder<>(new TraceScope(new MethodScope(patterns), scopeId), parentBuilder);
+		return new InstrumentationEntityBuilder<TraceScope>(new TraceScope(new MethodScope(patterns), scopeId), parentBuilder);
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class TraceEntityBuilder {
 	 * @return an {@code InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<TraceScope> setConstructorSubScope(String... classes) {
-		return new InstrumentationEntityBuilder<>(new TraceScope(new ConstructorScope(classes), scopeId), parentBuilder);
+		return new InstrumentationEntityBuilder<TraceScope>(new TraceScope(new ConstructorScope(classes), scopeId), parentBuilder);
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class TraceEntityBuilder {
 	 * @return an {@code InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<TraceScope> setAPISubScope(String apiName) {
-		return new InstrumentationEntityBuilder<>(new TraceScope(new APIScope(apiName), scopeId), parentBuilder);
+		return new InstrumentationEntityBuilder<TraceScope>(new TraceScope(new APIScope(apiName), scopeId), parentBuilder);
 	}
 
 	/**
@@ -103,7 +103,7 @@ public class TraceEntityBuilder {
 	 * @return an {@code InstrumentationEntityBuilder}
 	 */
 	public InstrumentationEntityBuilder<TraceScope> setCustomSubScope(String scopeName) {
-		return new InstrumentationEntityBuilder<>(new TraceScope(new CustomScope(scopeName), scopeId), parentBuilder);
+		return new InstrumentationEntityBuilder<TraceScope>(new TraceScope(new CustomScope(scopeName), scopeId), parentBuilder);
 	}
 
 }

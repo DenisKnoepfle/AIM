@@ -43,7 +43,7 @@ public class SupportedExtensions {
 	 */
 	public List<String> getSamplerExtensions() {
 		if (samplerExtensions == null) {
-			samplerExtensions = new ArrayList<>();
+			samplerExtensions = new ArrayList<String>();
 		}
 		return samplerExtensions;
 	}
@@ -61,7 +61,7 @@ public class SupportedExtensions {
 	 */
 	public List<String> getApiScopeExtensions() {
 		if (apiScopeExtensions == null) {
-			apiScopeExtensions = new ArrayList<>();
+			apiScopeExtensions = new ArrayList<String>();
 		}
 		return apiScopeExtensions;
 	}
@@ -98,7 +98,7 @@ public class SupportedExtensions {
 	 */
 	public List<String> getCustomScopeExtensions() {
 		if (customScopeExtensions == null) {
-			customScopeExtensions = new ArrayList<>();
+			customScopeExtensions = new ArrayList<String>();
 		}
 		return customScopeExtensions;
 	}
@@ -116,7 +116,7 @@ public class SupportedExtensions {
 	 */
 	public Map<String, Set<String>> getProbeExtensionsMapping() {
 		if (probeExtensionsMapping == null) {
-			probeExtensionsMapping = new HashMap<>();
+			probeExtensionsMapping = new HashMap<String, Set<String>>();
 		}
 		return probeExtensionsMapping;
 	}

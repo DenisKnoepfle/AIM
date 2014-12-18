@@ -40,7 +40,7 @@ public class ResponsetimeProbe extends AbstractEnclosingProbe {
 		super(provider);
 	}
 
-	public static final MeasurementProbe<MethodsEnclosingScope> MODEL_PROBE = new MeasurementProbe<>(
+	public static final MeasurementProbe<MethodsEnclosingScope> MODEL_PROBE = new MeasurementProbe<MethodsEnclosingScope>(
 			ResponsetimeProbe.class.getName());
 
 	@ProbeVariable
